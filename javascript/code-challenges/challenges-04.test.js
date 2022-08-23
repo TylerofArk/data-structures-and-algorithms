@@ -13,6 +13,8 @@ HINT: Look at the tests to see how the callback functions are used.
 
 ------------------------------------------------------------------------------------------------ */
 
+// Worked with Luis Rosales on challenge 1
+
 function upper(str) {
   return str.toUpperCase();
 }
