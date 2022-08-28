@@ -1,4 +1,5 @@
 'use strict';
+// Worked with Luis Rosales
 
 /* ------------------------------------------------------------------------------------------------
 
@@ -68,7 +69,7 @@ const sortByChildren = (charArray) => {
 CHALLENGE 2
 
 Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not.
-
+------------------------------------------------------------------------------------------------ */
 const containsW = (str) => {
   if (str.indexOf('w') >= 0)
     return true;
