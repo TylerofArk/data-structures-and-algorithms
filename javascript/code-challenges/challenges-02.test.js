@@ -74,7 +74,7 @@ const forEachTwoToThe = (arr) => {
     newArray.push(Math.pow(2, value));
   });
   return newArray;
-
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
