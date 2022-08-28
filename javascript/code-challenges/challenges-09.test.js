@@ -1,5 +1,7 @@
 'use strict';
 
+const { children } = require("cheerio/lib/api/traversing");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -61,8 +63,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  arr = [];
-  arr.push
+  return Object.entries(obj).map (value => value.join(': '));
 };
 
 
@@ -118,8 +119,9 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  let newArr = arr.filter(arr => arr.house);
-  houses.push(newArr);
+  arr.forEach(obj =>{
+    houses.push(obj.house);
+  });
   return houses;
 };
 
@@ -137,15 +139,16 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   let hasChildren = false;
-  arr.forEach((person, index) => {
-    if(person.name === character) {
-      const values = Object.values(person);
-      return values.some(v =>Array.isArray(v) ? hasChildren = false : null);
+
+  arr.forEach((person) => {
+    if (person.name === character) {
+      let values = Object.values(person);
+      return values.some(value => Array.isArray(value) ? hasChildren = true : false);
     }
   });
   return hasChildren;
 };
-console.log(hasChildrenValues(characters, 'Cersei'));
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
