@@ -8,7 +8,8 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str){
-  // Solution code here...
+  let splitString = str.split('');
+  return splitString.slice(-10);
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,7 +46,9 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+  const initialValue = 0;
+  return matrix.flat().reduce((previousValue, currentValue) =>
+    previousValue + currentValue, initialValue);
 };
 
 
@@ -71,9 +74,15 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
-const grandTotal = (stores) => {
-  // Solution code here...
 
+const grandTotal = (stores) => {
+  let totalNum = [];
+  for( let i = 0; i < firstPike.length; i++){
+    let totalSum = 0;
+    stores.forEach((value) => (totalSum) += value[i]);
+    totalNum.push(totalSum);
+  }
+  return totalNum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,7 +96,11 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  let objArr = [];
+  hoursOpen.forEach((hour, i) => {
+    objArr.push({ sales: `${data[i]} cookies`, time: `${hoursOpen[i]}` });
+  });
+  return objArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,7 +125,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  return arr[2].items[1].quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
