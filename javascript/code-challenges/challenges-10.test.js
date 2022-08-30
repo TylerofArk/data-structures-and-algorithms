@@ -96,11 +96,11 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  let objArr = [];
+  let results = [];
   hoursOpen.forEach((hour, i) => {
-    objArr.push({ sales: `${data[i]} cookies`, time: `${hoursOpen[i]}` });
+    results.push({ sales: `${data[i]} cookies`, time: `${hoursOpen[i]}` });
   });
-  return objArr;
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
