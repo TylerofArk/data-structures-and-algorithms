@@ -11,7 +11,9 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-  // Solution code here...
+  let regex = /^(Mr\.|Mrs\.|Ms\.|Dr\.)\s[a-zA-Z]+$/;
+
+  return arr.filter(str => regex.test(str));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,10 +25,7 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  for(let i = 0; i < arr.length; i++){
-    arr[i] = arr[i][0].toUpperCase() + arr[i].substr(i);
-  }
-  return arr;
+  return arr.map(str => str.charAt(0).toUpperCase() + str.substring(1));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -101,10 +100,11 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  arr.forEach((i, v) =>{
-    if(arr[i].mass > arr[0].mass)
-      return arr[i];
-  });
+  let luke = arr.find(character => character.name === 'Luke Skywalker');
+
+  return arr.filter(personObj => +personObj.mass > +luke.mass)
+    .map(person => person.name)
+    .join(' – ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -122,9 +122,7 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  arr.sort((a, b) => {
-    return a.price - b.price;
-  });
+  return arr.sort((a, b) => a[property] > b[property] ? 1: -1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -140,7 +138,9 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  // Solution code here...
+  let regTest = /(^https:\/\/)/;
+
+  return regTest.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -163,7 +163,24 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // NESTED FOR LOOP
+  const helpCheck = (row1, col1, row2, col2, row3, col3) => {
+    return board[row1][col1] !== '' &&
+    board[row1][col1] === board[row2][col2] &&
+    board[row2][col2] === board[row3][col3];
+  };
+
+  if(helpCheck(0,0,0,1,0)) return true;
+  if(helpCheck(1,0,1,1,1,2)) return true;
+  if(helpCheck(2,0,2,1,2,2)) return true;
+
+  if(helpCheck(0,0,1,0,2,0)) return true;
+  if(helpCheck(0,1,1,1,2,1)) return true;
+  if(helpCheck(0,2,1,2,2,2)) return true;
+
+  if(helpCheck(0,0,2,1,2,2)) return true;
+  if(helpCheck(0,2,1,1,2,0)) return true;
+
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
