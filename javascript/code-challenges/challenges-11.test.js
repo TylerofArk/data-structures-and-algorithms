@@ -79,12 +79,6 @@ const divisibleByFiveTwoToThePower = (input) => {
       }
     });
   });
-  // numbersOnly.forEach((v) => {
-  //   if(v.length > 0){
-  //     newArr.push(v.map(num => Math.pow(2, num)));
-  //   }
-  // });
-  // });
   numbersOnly.forEach((v) => {
     newArr.push(v.map(num => Math.pow(2, num)));
   });
@@ -154,19 +148,9 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  let newString = '';
-  data.forEach((v,i) => {
-    if(i === data.length-1){
-      if(v.gender === 'male' || v.gender === 'female') {
-        newString += v.name + ' and ';
-      }
-    } else {
-      if(v.gender === 'male' || v.gender === 'female') {
-        newString += v.name;
-      }
-    }
-  });
-  console.log(newString);
+  return data.filter(personObj => personObj.gender.includes('male'))
+    .map(person => person.name)
+    .join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -176,7 +160,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((shortestSoFar, nextCharacter) => +shortestSoFar.height < +nextCharacter.height ? shortestSoFar : nextCharacter).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
