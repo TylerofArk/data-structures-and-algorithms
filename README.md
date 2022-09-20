@@ -22,4 +22,4 @@ To run your tests
 
 ## Code Challenge 1
 
-[Reverse an Array](../data-structures-and-algorithms/Code-Challenges/reverseArray.md)
+[Reverse an Array](/Code-Challenges/reverseArray.md)
