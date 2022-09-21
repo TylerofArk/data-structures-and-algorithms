@@ -14,4 +14,4 @@ Write a function called insertShiftArray which takes in an array and a value to 
 
 ### Approach and Efficiency
 
-Luis Rosales and I worked on this together.
+Luis Rosales and I worked on this together. I researched how to get the middle position of the array and Luis suggested the for loop that we used.
