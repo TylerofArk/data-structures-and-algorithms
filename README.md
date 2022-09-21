@@ -23,3 +23,4 @@ To run your tests
 ## Code Challenge 1
 
 [Reverse an Array](/Code-Challenges/reverseArray.md)
+[Array Insert Shift](/Code-Challenges/arrayInsertShift.md)
