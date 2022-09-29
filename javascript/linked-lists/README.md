@@ -58,3 +58,30 @@ Extending an Implementation
 I used my last code challenge on linked lists to get me started on this challenge. Worked with Luis and we problem solved together.
 
 Big O: O(n)
+
+---------------------------------------------------------------
+
+# Zip two linked lists
+
+## Challenge 08
+
+Extending an Implementation
+
+### Features
+
+####
+
+- Write a function called zip lists
+- Arguments: 2 linked lists
+- Return: New Linked List, zipped as noted below
+- Zip the two linked lists together into one so that the nodes alternate between the two lists and        return a reference to the the zipped list.
+- Try and keep additional space down to O(1)
+
+## Approach & Efficiency
+
+After my initial attempt I found a solution but I couldn't wrap my head around the logic. Later on, Robert and Jun went through a solution step by step at the table I was at and I understood the solution and the logic perfectly for the first time in our linked list challenge week.
+
+Big O: O(n)
+
+Whiteboard:
+[Code Challnge 08](./imgs/CodeChallenge08.png)

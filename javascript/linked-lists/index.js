@@ -99,6 +99,41 @@ class LinkedList {
     }
     return current.value;
   }
-}
+
+  zipList(list1, list2) {
+    let current1 = list1.head;
+    let current2 = list2.head;
+    let outputList = new LinkedList();
+
+    while (current1 || current2) {
+      if (current1) {
+        outputList.append(current1.value);
+        current1 = current1.next;
+      }
+      if (current2) {
+        outputList.append(current2.value);
+        current2 = current2.next;
+      }
+    }
+    return outputList;
+  }
+
+
+let list1 = new LinkedList();
+// add head to list
+list.add(1);
+list.add(3);
+list.add(5);
+list.add(7);
+list.add(9);
+
+let list2 = new LinkedList();
+list2.add(2);
+list2.add(4);
+list2.add(6);
+list2.add(8);
+list2.add(10);
+
+console.log('ziplist', zipList(list, list2).toString());
 
 module.exports = LinkedList;
