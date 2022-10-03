@@ -1,46 +1,41 @@
 'use strict';
 
-const Node = require('./node.js');
 
-class Stack{
-  constructor(){
-    this.top = null;
+class Stack {
+  constructor() {
+    this.items = [];
+    this.count = 0;
   }
 
-  push(value) {
-    let oldTop = this.top;
-    let addNode = new Node(value);
-    addNode.next = oldTop;
-    this.top = addNode;
+  // Add element to top of stack
+  push(element) {
+    this.items[this.count] = element;
+    console.log(`${element} added to ${this.count}`);
+    this.count += 1;
+    return this.count - 1;
   }
 
-  pop(){
-    let temp = this.top;
-    if(this.isEmpty()){
-      return 'Stack empty';
-    }
-    this.top = temp.next;
-    return temp.value;
+  // Return and remove top element in stack
+  // Return undefined if stack is empty
+  pop() {
+    if(this.count === 0) return undefined;
+    let deleteItem = this.items[this.count - 1];
+    this.count -= 1;
+    console.log(`${deleteItem} removed`);
+    return deleteItem;
   }
 
-  peek(){
-    let top = this.top;
-    if(this.isEmpty()){
-      return 'Stack empty';
-    }
-    return top.value;
+  // Check top element in stack
+  peek() {
+    console.log(`Top element is ${this.items[this.count - 1]}`);
+    return this.items[this.count - 1];
   }
 
-  isEmpty(){
-    let top = this.top;
-    if(!top){
-      return true;
-    }
-    else{
-      return false;
-    }
+  // Check if stack is empty
+  isEmpty() {
+    console.log(this.count === 0 ? 'Stack is empty' : 'Stack is NOT empty');
+    return this.count === 0;
   }
-
 }
 
 module.exports = Stack;
