@@ -43,6 +43,8 @@ Luis and I hopped on Sunday night to work through it together.
 
 [Code Challenge 14 K-ary-tree.png](../assets/Code%20Challenge%2014%20K-ary-tree.png)
 
+[Code Challenge 16 Find Max](../assets/Code%20Challenge%2016_%20Binary%20Tree%20Max%20Value.png)
+
 ### Credits
 
 Luis Rosales
