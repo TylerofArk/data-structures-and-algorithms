@@ -19,3 +19,12 @@ describe('Testing Binary Trees and Binary Search Tree', () => {
     expect(binarySearchTree.root.value).toEqual('a');
   });
 });
+
+it('Can find the max value in a binary tree', () => {
+  let binaryTree = new BinaryTree();
+  let binarySearchTree = new BinaryTree();
+  binaryTree.root = new Node('a');
+  binarySearchTree.add('a');
+  expect(binaryTree.root.value).toEqual('a');
+  expect(binarySearchTree.root.value).toEqual('a');
+});
