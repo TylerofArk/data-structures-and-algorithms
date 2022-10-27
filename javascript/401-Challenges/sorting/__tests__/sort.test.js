@@ -1,6 +1,6 @@
 'user strict';
 
-const insertionSort = require('../index');
+const insertionSort = require('../insertionSort');
 
 describe('can successfully sort', () => {
   it('an array in numerical order', () => {
