@@ -4,7 +4,6 @@
 * Author: Tyler Main
 * Credits: Luis Rosales
 
----
 
 ## Challenge
 
