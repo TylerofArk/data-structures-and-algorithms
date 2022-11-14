@@ -81,6 +81,26 @@ class Graph {
     return size;
   }
 
+  businessTrip(graph, arr) {
+    let price = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+      let node = graph.getNodes();
+      let city = node.filter(city => city.value === arr[i])[0];
+      let edges = graph.getNeighbors(city);
+      let neighbors = edges.filter(
+        city => city.vertex.value === arr[i + 1]
+      )[0];
+      if (neighbors) {
+        price = (price + neighbors.weight);
+      } else if (i === arr.length - 1) {
+        return `$${price}`;
+      } else {
+        return null;
+      }
+    }
+  }
+
 }
 
 module.exports = Graph;
