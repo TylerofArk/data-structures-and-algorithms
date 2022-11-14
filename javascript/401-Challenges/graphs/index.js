@@ -73,6 +73,27 @@ class Graph {
     return visitedNodes;
   }
 
+  depthFirst(graph, startNode) {
+    const visitedNodes = new Set();
+    function traverse(node) {
+      if (!node) {
+        return null;
+      }
+      visitedNodes.add(node);
+      const neighbors = graph[node];
+      for (let neighbor of neighbors) {
+        if (visitedNodes.has(neighbor)) {
+          continue;
+        }
+        traverse(neighbor);
+      }
+    }
+
+    traverse(startNode);
+    return visitedNodes;
+  }
+
+
   size(){
     let size = 0;
     for(let key of this._adjacencyList.keys()){
